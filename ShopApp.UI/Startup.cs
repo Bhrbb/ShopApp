@@ -11,6 +11,7 @@ using ShopApp.DataAccess.Concrete.Memory;
 using ShopApp.Business.Abstract;
 using ShopApp.Business.Concrete;
 using ShopApp.DataAccess.Concrete.EfCore;
+using ShopApp.UI.Middlewares;
 
 namespace ShopApp.UI
 {
@@ -37,6 +38,9 @@ namespace ShopApp.UI
                 app.UseDeveloperExceptionPage();
                 Test.Seed();
             }
+
+            app.UseStaticFiles();
+            app.CustomStaticFiles();
 
             app.UseMvcWithDefaultRoute();
            
